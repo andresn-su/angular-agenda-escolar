@@ -1,0 +1,51 @@
+<an-title-bar [titleToolbar]="titleToolbar"></an-title-bar>
+
+<mat-card class="main-card">
+    <h2 class="title-section-page">{{ schedule?.discipline || "Adicionar ao Horário" }}</h2>
+    
+    <div class="container-form">
+        <div class="form-fields-row fields-line-1">
+            <mat-form-field>
+                <mat-label>disciplina*</mat-label>
+                <mat-select [(ngModel)]="schedule.discipline">
+                    <mat-option *ngFor="let discipline of disciplinesList" value="{{ discipline.name }}">
+                        {{ discipline.name }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Início da aula*</mat-label>
+                <input matInput [(ngModel)]="schedule.starts">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Término da aula*</mat-label>
+                <input matInput [(ngModel)]="schedule.finishes">
+            </mat-form-field>
+        </div>
+        <div class="form-fields-row fields-line-1">
+            <mat-form-field>
+                <mat-label>Dia*</mat-label>
+                <mat-select [(ngModel)]="schedule.day">
+                    <mat-option *ngFor="let day of days" value="{{ day }}">
+                        {{ day }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-fields-row">
+            <div *ngIf="checkAction==1">
+                <button mat-raised-button color="primary" (click)="createSchedule()">
+                    <mat-icon>save</mat-icon> Adicionar
+                </button>
+            </div>
+            <div *ngIf="checkAction==0">
+                <button mat-raised-button color="primary" (click)="updateSchedule()">
+                    <mat-icon>save</mat-icon> Atualizar
+                </button>
+                <button mat-raised-button color="warn" (click)="deleteSchedule()">
+                    <mat-icon>save</mat-icon> Deletar
+                </button>
+            </div>
+        </div>
+    </div>
+</mat-card>

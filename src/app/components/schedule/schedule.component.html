@@ -1,0 +1,116 @@
+<an-title-bar [titleToolbar]="titleToolbar"></an-title-bar>
+
+<mat-card class="main-card">
+    <h2 class="title-section-page">Horário</h2>
+    <div class="center">
+        <button mat-raised-button color="primary" routerLink="/schedule/add">
+            <mat-icon>add</mat-icon> Novo
+        </button>
+    </div>
+    <div class="container" *ngIf="scheduleList$ | async as scheduleList; else loading">
+        <div class="container-schedule day">
+            <div class="schedule-day">
+                <div class="discipline">
+                    <div class="discipline-title">
+                        Segunda
+                    </div>
+                </div>
+            </div>
+            <div class="schedule-day">
+                <div class="discipline">
+                    <div class="discipline-title">
+                        Terça
+                    </div>
+                </div>
+            </div>
+            <div class="schedule-day">
+                <div class="discipline">
+                    <div class="discipline-title">
+                        Quarta
+                    </div>
+                </div>
+            </div>
+            <div class="schedule-day">
+                <div class="discipline">
+                    <div class="discipline-title">
+                        Quinta
+                    </div>
+                </div>
+            </div>
+            <div class="schedule-day">
+                <div class="discipline">
+                    <div class="discipline-title">
+                        Sexta
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-schedule">
+            <div class="schedule-day">
+                <div class="discipline" *ngFor="let item of days.monday" matRipple>
+                    <div class="item-content" [routerLink]="['/schedule', item.id]">
+                        <div class="discipline-title">
+                            {{ item.discipline }}
+                        </div>
+                        <div class="discipline-interval">
+                            {{ item.starts }} - {{ item.finishes }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="schedule-day">
+                <div class="discipline" *ngFor="let item of days.tuesday" matRipple>
+                    <div class="item-content" [routerLink]="['/schedule', item.id]">
+                        <div class="discipline-title">
+                            {{ item.discipline }}
+                        </div>
+                        <div class="discipline-interval">
+                            {{ item.starts }} - {{ item.finishes }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="schedule-day">
+                <div class="discipline" *ngFor="let item of days.wednesday" matRipple>
+                    <div class="item-content" [routerLink]="['/schedule', item.id]">
+                        <div class="discipline-title">
+                            {{ item.discipline }}
+                        </div>
+                        <div class="discipline-interval">
+                            {{ item.starts }} - {{ item.finishes }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="schedule-day">
+                <div class="discipline" *ngFor="let item of days.thursday" matRipple>
+                    <div class="item-content" [routerLink]="['/schedule', item.id]">
+                        <div class="discipline-title">
+                            {{ item.discipline }}
+                        </div>
+                        <div class="discipline-interval">
+                            {{ item.starts }} - {{ item.finishes }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="schedule-day">
+                <div class="discipline" *ngFor="let item of days.friday" matRipple>
+                    <div class="item-content" [routerLink]="['/schedule', item.id]">
+                        <div class="discipline-title">
+                            {{ item.discipline }}
+                        </div>
+                        <div class="discipline-interval">
+                            {{ item.starts }} - {{ item.finishes }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #loading>
+        <mat-spinner diameter="50"></mat-spinner>
+    </ng-template>
+</mat-card>

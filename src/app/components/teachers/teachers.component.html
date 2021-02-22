@@ -1,0 +1,39 @@
+<an-title-bar [titleToolbar]="titleToolbar"></an-title-bar>
+
+<mat-card class="main-card">
+    <h2 class="title-section-page">Lista de Professores</h2>
+    <div class="center">
+        <button mat-raised-button color="primary" routerLink="/teachers/add">
+            <mat-icon>add</mat-icon> Novo
+        </button>
+    </div>
+    <div class="container" *ngIf="teachersList$ | async as teachersList; else loading">
+        <mat-grid-list cols="5" rowHeight="3:1" class="header-grid">
+            <mat-grid-tile>#</mat-grid-tile>
+            <mat-grid-tile>Professor</mat-grid-tile>
+            <mat-grid-tile>Email</mat-grid-tile>
+            <mat-grid-tile>Telefone</mat-grid-tile>
+            <mat-grid-tile>Ações</mat-grid-tile>
+        </mat-grid-list>
+        <mat-grid-list cols="5" *ngFor="let teacher of teachersList" rowHeight="3:1"
+        class="content-grid-table">
+            <mat-grid-tile>{{ teacher.id }}</mat-grid-tile>
+            <mat-grid-tile>{{ teacher.name }}</mat-grid-tile>
+            <mat-grid-tile>{{ teacher.email }}</mat-grid-tile>
+            <mat-grid-tile>{{ teacher.phone }}</mat-grid-tile>
+            <mat-grid-tile>
+                <button mat-icon-button color="primary" [routerLink]="['/teachers', teacher.id]">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn"
+                (click)="deleteTeacher(teacher.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+
+    <ng-template #loading>
+        <mat-spinner diameter="50"></mat-spinner>
+    </ng-template>
+</mat-card>

@@ -1,0 +1,37 @@
+<an-title-bar [titleToolbar]="titleToolbar"></an-title-bar>
+
+<mat-card class="main-card">
+    <h2 class="title-section-page">{{ teacher?.name || "Adicionar Professor" }}</h2>
+    
+    <div class="container-form">
+        <div class="form-fields-row fields-line-1">
+            <mat-form-field>
+                <mat-label>Nome*</mat-label>
+                <input matInput type="text" [(ngModel)]="teacher.name">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Email*</mat-label>
+                <input matInput [(ngModel)]="teacher.email">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Telefone</mat-label>
+                <input matInput [(ngModel)]="teacher.phone">
+            </mat-form-field>
+        </div>
+        <div class="form-fields-row">
+            <div *ngIf="checkAction==1">
+                <button mat-raised-button color="primary" (click)="createTeacher()">
+                    <mat-icon>save</mat-icon> Adicionar
+                </button>
+            </div>
+            <div *ngIf="checkAction==0">
+                <button mat-raised-button color="primary" (click)="updateTeacher()">
+                    <mat-icon>save</mat-icon> Atualizar
+                </button>
+                <button mat-raised-button color="warn" (click)="deleteTeacher()">
+                    <mat-icon>save</mat-icon> Deletar
+                </button>
+            </div>
+        </div>
+    </div>
+</mat-card>

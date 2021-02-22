@@ -1,0 +1,32 @@
+.side-container{
+    min-width: 280px;
+    height: 100vh;
+}
+
+#sidenav{
+    width: 280px;
+}
+
+#sidenav button{
+    width: 100%;
+    text-align: left;
+    margin-top: 5px
+}
+
+.title-app{
+    font-size: 35px;
+    text-align: center;
+    background-color: #3F51B5;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.container-btns{
+    margin-top: 20px;
+    padding: 10px !important;
+}
+
+mat-sidenav-content{
+    background-color: rgb(238, 238, 238);
+}

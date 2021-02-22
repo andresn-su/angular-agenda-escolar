@@ -1,0 +1,42 @@
+<an-title-bar [titleToolbar]="titleToolbar"></an-title-bar>
+
+<mat-card class="main-card">
+    <h2 class="title-section-page">Lista de Atividades</h2>
+    <div class="center">
+        <button mat-raised-button color="primary" routerLink="/activities/add">
+            <mat-icon>add</mat-icon> Nova
+        </button>
+    </div>
+
+    <div class="" 
+    *ngIf="activitiesList$ | async as activitiesList; else loading">
+        <div class="container-table" *ngFor="let activity of activitiesList | reverse">
+            <table>
+                <tr>
+                    <td class="title-activity">{{ activity.title }}</td>
+                    <td class="fixed-width">{{ activity.status }}</td>
+                    <td class="fixed-width">{{ activity.submitDate }}</td>
+                    <td class="fixed-width">{{ activity.discipline }}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">{{ activity.description }}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <button mat-icon-button color="primary"
+                        [routerLink]="['/activities', activity.id]">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button color="warn" (click)="deleteActivity(activity.id)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <ng-template #loading>
+        <mat-spinner diameter="50"></mat-spinner>
+    </ng-template>
+</mat-card>

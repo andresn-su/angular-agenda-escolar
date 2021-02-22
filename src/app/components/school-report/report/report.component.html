@@ -1,0 +1,47 @@
+<an-title-bar [titleToolbar]="titleToolbar"></an-title-bar>
+
+<mat-card class="main-card">
+    <h2 class="title-section-page">{{ report?.discipline || "Adicionar Nota" }}</h2>
+    
+    <div class="container-form">
+        <div class="form-fields-row fields-line-1">
+            <mat-form-field>
+                <mat-label>Disciplina*</mat-label>
+                <mat-select [(ngModel)]="report.discipline">
+                    <mat-option *ngFor="let discipline of disciplinesList" value="{{ discipline.name }}">
+                        {{ discipline.name }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Data*</mat-label>
+                <input matInput [(ngModel)]="report.date">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Nota*</mat-label>
+                <input matInput type="number" min="0" max="10" [(ngModel)]="report.eval">
+            </mat-form-field>
+        </div>
+        <div class="fields-line-3">
+            <mat-form-field>
+                <mat-label>Anotações</mat-label>
+                <textarea matInput [(ngModel)]="report.notes" rows="6"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="form-fields-row">
+            <div *ngIf="checkAction==1">
+                <button mat-raised-button color="primary" (click)="createReport()">
+                    <mat-icon>save</mat-icon> Adicionar
+                </button>
+            </div>
+            <div *ngIf="checkAction==0">
+                <button mat-raised-button color="primary" (click)="updateReport()">
+                    <mat-icon>save</mat-icon> Atualizar
+                </button>
+                <button mat-raised-button color="warn" (click)="deleteReport()">
+                    <mat-icon>save</mat-icon> Deletar
+                </button>
+            </div>
+        </div>
+    </div>
+</mat-card>

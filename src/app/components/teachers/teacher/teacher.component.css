@@ -1,0 +1,21 @@
+.container-form{
+    display: flex;
+    flex-direction: column;
+    min-width: 700px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.form-fields-row{
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+}
+
+.fields-line-1, .fields-line-1 mat-form-field, .fields-line-1 input{
+    width: 300px !important
+}
+
+mat-form-field{
+    padding: 10px;
+}

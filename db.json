@@ -1,0 +1,191 @@
+{
+  "activities": [
+    {
+      "title": "Atividade de teste",
+      "description": "piiiiiiiiiiiiiiiiiiiiiiiii",
+      "status": "Aguardando",
+      "discipline": "Física 1",
+      "submitDate": "25/02/2021",
+      "id": 4
+    },
+    {
+      "title": "Mais uma atividade",
+      "description": "dfg dfg ds",
+      "status": "Enviada",
+      "discipline": "Física 1",
+      "submitDate": "13/04/2021",
+      "id": 5
+    },
+    {
+      "title": "Primeira prova de Física",
+      "description": "",
+      "status": "Aguardando",
+      "discipline": "Física 1",
+      "submitDate": "25/02/2021",
+      "id": 6
+    }
+  ],
+  "disciplines": [
+    {
+      "name": "Cálculo 1",
+      "id": 1,
+      "description": "Descrição da disciplina",
+      "notes": "Conteúdo da anotação",
+      "teacher": "Júlia Messier",
+      "bibliography": "Guidorizzi",
+      "room": "Sala 2"
+    },
+    {
+      "name": "Física 1",
+      "id": 2,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a est quam. Donec feugiat diam vitae dolor porttitor, nec pretium mauris porta. Fusce sodales, ligula vitae malesuada posuere, tortor lacus euismod urna, vel bibendum urna libero in felis",
+      "notes": "Mauris aliquam pulvinar tincidunt.",
+      "teacher": "Ipsum Aguiar",
+      "bibliography": "Física Básica 1 - Moysés",
+      "room": "Sala 2, Campus do Café, bloco 1"
+    },
+    {
+      "name": "Programação",
+      "description": "Uma disciplina muito legal.",
+      "notes": "bla bla blaaaaa.",
+      "teacher": "José Dolor",
+      "bibliography": "Código Limpo",
+      "room": "Sala 03",
+      "id": 3
+    },
+    {
+      "name": "Geometria Analítica",
+      "description": "",
+      "notes": "",
+      "teacher": "Júlia Messier",
+      "bibliography": "",
+      "room": "Sala 04",
+      "schedule": "",
+      "id": 4
+    }
+  ],
+  "schoolReport": [
+    {
+      "id": 2,
+      "discipline": "Cálculo 1",
+      "notes": "Uma prova muito fácil.",
+      "eval": 9.2,
+      "date": "10/08/2021"
+    },
+    {
+      "discipline": "Física 1",
+      "notes": "kjghlhj",
+      "eval": 98,
+      "date": "10/02/2021",
+      "id": 3
+    },
+    {
+      "discipline": "Física 1",
+      "notes": "",
+      "eval": 10,
+      "date": "10/01/2021",
+      "id": 4
+    },
+    {
+      "discipline": "Cálculo 1",
+      "notes": "d",
+      "eval": 8,
+      "date": "14/02/2021",
+      "id": 5
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "name": "Lorem da Silva",
+      "email": "lorem.silva@lorem.com",
+      "phone": "00 00000-99999"
+    },
+    {
+      "id": 2,
+      "name": "Ipsum Aguiar",
+      "email": "ipsum.aguiar@ipsum.com",
+      "phone": "00 00000-0000"
+    },
+    {
+      "id": 4,
+      "name": "Júlia Messier",
+      "email": "messier.julia@messier.com",
+      "phone": "00 00000-0000"
+    }
+  ],
+  "tests": [
+    {
+      "title": "Primeira prova de Física",
+      "description": "Eitttaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "date": "13/04/2021",
+      "discipline": "Física 1",
+      "id": 2
+    },
+    {
+      "title": "Prova surpresa",
+      "description": "Mas ninguém pode saber",
+      "date": "13/05/2021",
+      "discipline": "Física 1",
+      "id": 3
+    }
+  ],
+  "schedule": [
+    {
+      "day": "Segunda",
+      "starts": "10:00am",
+      "finishes": "12:00pm",
+      "discipline": "Física 1",
+      "id": 1
+    },
+    {
+      "day": "Quarta",
+      "starts": "10:00am",
+      "finishes": "12:00pm",
+      "discipline": "Física 1",
+      "id": 2
+    },
+    {
+      "day": "Segunda",
+      "starts": "13:00am",
+      "finishes": "15:00pm",
+      "discipline": "Cálculo 1",
+      "id": 3
+    },
+    {
+      "discipline": "Programação",
+      "starts": "08:00",
+      "finishes": "10:00",
+      "day": "Sexta",
+      "id": 4
+    },
+    {
+      "discipline": "Programação",
+      "starts": "15:00",
+      "finishes": "17:00",
+      "day": "Quarta",
+      "id": 5
+    },
+    {
+      "discipline": "Física 1",
+      "starts": "13:00",
+      "finishes": "15:00",
+      "day": "Quinta",
+      "id": 6
+    },
+    {
+      "discipline": "Geometria Analítica",
+      "starts": "15:00",
+      "finishes": "17:00",
+      "day": "Quinta",
+      "id": 7
+    },
+    {
+      "discipline": "Geometria Analítica",
+      "starts": "15:00",
+      "finishes": "17:00",
+      "day": "Sexta",
+      "id": 8
+    }
+  ]
+}

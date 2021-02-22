@@ -1,0 +1,58 @@
+<an-title-bar [titleToolbar]="titleToolbar"></an-title-bar>
+
+<mat-card class="main-card">
+    <h2 class="title-section-page">{{ activity?.name || "Adicionar Atividade" }}</h2>
+    
+    <div class="container-form">
+        <div class="form-fields-row fields-line-1">
+            <mat-form-field>
+                <mat-label>Atividade*</mat-label>
+                <input matInput type="text" [(ngModel)]="activity.title">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Data de Envio*</mat-label>
+                <input matInput [(ngModel)]="activity.submitDate">
+            </mat-form-field>
+        </div>
+        <div class="form-fields-row fields-line-2">
+            <mat-form-field>
+                <mat-label>Disciplina*</mat-label>
+                <mat-select [(ngModel)]="activity.discipline">
+                    <mat-option *ngFor="let discipline of disciplinesList" value="{{ discipline.name }}">
+                        {{ discipline.name }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Status*</mat-label>
+                <mat-select [(ngModel)]="activity.status">
+                    <mat-option *ngFor="let value of status" value="{{ value.name }}">
+                        {{ value.name }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="fields-line-3">
+            <mat-form-field>
+                <mat-label>Descrição</mat-label>
+                <textarea matInput [(ngModel)]="activity.description" rows="6"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="form-fields-row">
+            <div *ngIf="checkAction==1">
+                <button mat-raised-button color="primary" (click)="createActivity()">
+                    <mat-icon>save</mat-icon> Adicionar
+                </button>
+            </div>
+            <div *ngIf="checkAction==0">
+                <button mat-raised-button color="primary" (click)="updateActivity()">
+                    <mat-icon>save</mat-icon> Atualizar
+                </button>
+                <button mat-raised-button color="warn" (click)="deleteActivity()">
+                    <mat-icon>save</mat-icon> Deletar
+                </button>
+            </div>
+        </div>
+    </div>
+</mat-card>
+ 

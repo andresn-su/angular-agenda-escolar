@@ -1,0 +1,40 @@
+.container-schedule{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+.schedule-day{
+    width: 20%;
+    border: solid rgb(158, 157, 157) 2px;
+}
+
+.schedule-day .item-content, .day .discipline{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.schedule-day .item-content:focus{
+    outline: none;
+    outline-offset: 0px;
+}
+
+.schedule-day .discipline{
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.schedule-day .discipline:hover{
+    background-color: rgb(243, 241, 241);
+}
+
+.discipline .discipline-title{
+    font-weight: bold;
+}
+
+.discipline .discipline-interval{
+    color: rgb(158, 157, 157);
+}

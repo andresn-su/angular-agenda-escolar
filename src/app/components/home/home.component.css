@@ -1,0 +1,84 @@
+.three-columns, .container-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.three-columns mat-card{
+    width: 30%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+}
+
+.space{
+    width: 5%;
+}
+
+.text-top-card{
+    font-size: 45px;
+    font-weight: 500;
+    color: rgb(83, 83, 83);
+}
+
+.three-columns mat-card .icon mat-icon{
+    font-size: 45px !important;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 80px;
+    background-color: #3F51B5;
+    color: white;
+}
+
+.three-columns mat-card .icon{
+    margin-right: 8px;
+}
+
+.three-columns mat-card .content .description{
+    margin-top: 12px;
+}
+
+.three-columns mat-card .content{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+mat-card:focus{
+    outline: none;
+    outline-offset: 0px;
+}
+
+.today-date{
+    text-align: center;
+}
+
+.title-section{
+    font-size: 18px;
+    text-align: center;
+}
+
+.container-row .col{
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.discipline{
+    font-weight: bold;
+}
+
+.discipline-day{
+    margin-top: 15px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.discipline-day:hover{
+    background-color: rgb(243, 241, 241);
+}
+
+.discipline-line{
+    margin-bottom: 8px;
+    margin-top: 8px;
+}

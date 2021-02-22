@@ -1,0 +1,37 @@
+<an-title-bar [titleToolbar]="titleToolbar"></an-title-bar>
+
+<mat-card class="main-card">
+    <h2 class="title-section-page">Notas de Provas</h2>
+    <div class="center">
+        <button mat-raised-button color="primary" routerLink="/school-report/add">
+            <mat-icon>add</mat-icon> Nova
+        </button>
+    </div>
+    <div class="" *ngIf="reportsList$ | async as reportsList; else loading">
+        <div class="container-table" *ngFor="let report of reportsList | reverse">
+            <table>
+                <tr>
+                    <td class="title-activity">{{ report.discipline }}</td>
+                    <td class="fixed-width">{{ report.eval }}</td>
+                    <td class="fixed-width">{{ report.date }}</td>
+                    <td class="fixed-width">
+                        <button mat-icon-button color="primary"
+                        [routerLink]="['/school-report', report.id]">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button color="warn" (click)="deleteReport(report.id)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">{{ report.notes }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <ng-template #loading>
+        <mat-spinner diameter="50"></mat-spinner>
+    </ng-template>
+</mat-card>

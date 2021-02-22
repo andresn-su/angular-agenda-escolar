@@ -1,1 +1,107 @@
 /* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: rgb(238, 238, 238);}
+
+
+/*  Loader  */
+
+#loader {
+    bottom: 0;
+    height: 175px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 175px;
+  }
+
+.title{
+    border-bottom: solid #3F51B5 3px;
+    padding: 5px;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+
+.main-card{
+    margin: 30px;
+}
+
+.title-section-page{
+    text-align: center;
+}
+
+.center{
+    text-align: center;
+}
+
+
+.title-section{
+    font-weight: bold;
+}
+
+.section-container-list{
+    display: flex;
+    flex-direction: row;
+}
+
+.section-container{
+    width: 50%;
+    padding-top: 18px;
+}
+
+.header-section-container, .content-section{
+    padding: 5px;
+}
+
+.subtitle-section{
+    color: rgb(143, 142, 142);
+    font-size: 12px
+}
+
+.section-info, .description-actions{
+    display: flex;
+    flex-direction: row;
+}
+
+.section-info-div{
+    width: 50%;
+}
+
+.description{
+    width: 300px;
+}
+
+.container-no-data{
+    padding: 20px;
+    text-align: center;
+}
+
+.header-grid{
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+mat-grid-list{
+    background-color: white;
+    transition: 0.3s;
+}
+
+mat-grid-list:hover{
+    background-color: rgb(243, 241, 241);
+}
+
+.content-grid-table:hover{
+    cursor: pointer;
+}
+
+button{
+    margin-right: 5px !important;
+}
+
+mat-spinner{
+    position: absolute;
+    left: 50%;
+    right: 50%;
+}

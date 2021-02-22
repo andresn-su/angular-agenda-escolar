@@ -1,0 +1,22 @@
+.container-table, table{
+    width: 100% !important;
+}
+
+mat-card{
+    padding: 30px;
+}
+
+.container-table table{
+    border: solid rgb(235, 235, 235) 2px;
+    padding: 8px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.fixed-width{
+    width: 90px;
+}
+
+.title-activity{
+    font-weight: bold;
+}

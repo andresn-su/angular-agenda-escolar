@@ -1,0 +1,39 @@
+<an-title-bar [titleToolbar]="titleToolbar"></an-title-bar>
+<mat-card class="main-card">
+    <h2 class="title-section-page">Provas Marcadas</h2>
+    <div class="center">
+        <button mat-raised-button color="primary" routerLink="/tests/add">
+            <mat-icon>add</mat-icon> Nova
+        </button>
+    </div>
+
+    <div class="" *ngIf="testsList$ | async as testsList; else loading">
+        <div class="container-table" *ngFor="let test of testsList | reverse">
+            <table>
+                <tr>
+                    <td class="title-activity">{{ test.title }}</td>
+                    <td class="fixed-width">{{ test.date }}</td>
+                    <td class="fixed-width">{{ test.discipline }}</td>
+                </tr>
+                <tr>
+                    <td colspan="3">{{ test.description }}</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <button mat-icon-button color="primary"
+                        [routerLink]="['/tests', test.id]">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button color="warn" (click)="deleteTest(test.id)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <ng-template #loading>
+        <mat-spinner diameter="50"></mat-spinner>
+    </ng-template>
+</mat-card>

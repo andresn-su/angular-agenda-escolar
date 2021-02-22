@@ -1,0 +1,91 @@
+<an-title-bar [titleToolbar]="titleToolbar"></an-title-bar>
+
+<div class="three-columns main-card">
+    <!--<div class="col" matRipple>
+        1
+    </div>
+    <div class="col" matRipple>
+        2
+    </div>
+    <div class="col" matRipple>
+        3
+    </div>-->
+    <mat-card matRipple routerLink="/activities">
+        <div class="icon">
+            <mat-icon [inline]="true">class</mat-icon>
+        </div>
+        <div class="content">
+            <div class="text-top-card">
+                {{ today.qtdActivities }}
+            </div>
+            <div class="description">
+                Atividades para concluir
+            </div>
+        </div>
+    </mat-card>
+
+    <div class="space"></div>
+
+    <mat-card matRipple routerLink="/tests">
+        <div class="icon">
+            <mat-icon [inline]="true">event</mat-icon>
+        </div>
+        <div class="content">
+            <div class="text-top-card">
+                {{ today.qtdTests }}
+            </div>
+            <div class="description">
+                Provas marcadas
+            </div>
+        </div>
+    </mat-card>
+    
+    <div class="space"></div>
+
+    <mat-card matRipple routerLink="/schedule">
+        <div class="icon">
+            <mat-icon [inline]="true">date_range</mat-icon>
+        </div>
+        <div class="content">
+            <div class="text-top-card">
+                {{ today.qtdTodayClasses }}
+            </div>
+            <div class="description">
+                Aulas hoje
+            </div>
+        </div>
+    </mat-card>
+</div>
+
+
+<mat-card class="main-card">
+    <div class="today-date">
+        Hoje é {{ today.today }}!
+    </div>
+    <div class="container-row" *ngIf="scheduleList$ | async; else loading">
+        <div class="col">
+            <div class="title-section">Aulas de Hoje</div>
+            <div class="discipline-day" *ngFor="let discipline of today.disciplinesToday">
+                <div class="discipline-line discipline">
+                    {{ discipline.discipline }}
+                </div>
+                <div class="discipline-line">
+                    {{ discipline.starts }}h - {{ discipline.finishes }}h
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="title-section">Aulas de Amanhã</div>
+            <div class="discipline-day" *ngFor="let disciplineTomorrow of today.disciplinesTomorrow">
+                <div class="discipline-line discipline">
+                    {{ disciplineTomorrow.discipline }}
+                </div>
+                <div class="discipline-line">
+                    {{ disciplineTomorrow.starts }}h - {{ disciplineTomorrow.finishes }}h
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #loading><mat-spinner diameter="50"></mat-spinner></ng-template>
+</mat-card>

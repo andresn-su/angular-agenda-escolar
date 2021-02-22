@@ -1,0 +1,57 @@
+<an-title-bar [titleToolbar]="titleToolbar"></an-title-bar>
+
+<mat-card class="main-card">
+    <h2 class="title-section-page">{{ discipline?.name || "Adicionar Disciplina" }}</h2>
+    
+    <div class="container-form">
+        <div class="form-fields-row fields-line-1">
+            <mat-form-field>
+                <mat-label>Disciplina*</mat-label>
+                <input matInput type="text" [(ngModel)]="discipline.name">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Sala*</mat-label>
+                <input matInput [(ngModel)]="discipline.room">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Professor*</mat-label>
+                <mat-select [(ngModel)]="discipline.teacher">
+                    <mat-option *ngFor="let teacher of teachersList" value="{{ teacher.name }}">
+                        {{ teacher.name }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-fields-row fields-line-2">
+            <mat-form-field>
+                <mat-label>Bibliografia</mat-label>
+                <textarea matInput [(ngModel)]="discipline.bibliography" rows="6"></textarea>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Descrição</mat-label>
+                <textarea matInput [(ngModel)]="discipline.description" rows="6"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="fields-line-3">
+            <mat-form-field>
+                <mat-label>Anotações</mat-label>
+                <textarea matInput [(ngModel)]="discipline.notes" rows="6"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="form-fields-row">
+            <div *ngIf="checkAction==1">
+                <button mat-raised-button color="primary" (click)="createDiscipline()">
+                    <mat-icon>save</mat-icon> Adicionar
+                </button>
+            </div>
+            <div *ngIf="checkAction==0">
+                <button mat-raised-button color="primary" (click)="updateDiscipline()">
+                    <mat-icon>save</mat-icon> Atualizar
+                </button>
+                <button mat-raised-button color="warn" (click)="deleteDiscipline()">
+                    <mat-icon>save</mat-icon> Deletar
+                </button>
+            </div>
+        </div>
+    </div>
+</mat-card>
