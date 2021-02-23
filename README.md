@@ -1,6 +1,7 @@
 # AEscolar
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6. It uses a json file to store data.
+You can watch this project working on my channel: https://youtu.be/bIEyMUBSm94
 
 ## Development server
 
