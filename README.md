@@ -1,7 +1,7 @@
 # AEscolar
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6. It uses Json Server to work as a server for the application and also the [Angular Material](https://material.angular.io/) for its interface.
-You can watch this project working on my channel: https://youtu.be/bIEyMUBSm94.
+You can watch this project working on my [channel](https://youtu.be/bIEyMUBSm94).
 
 ## Development server
 
